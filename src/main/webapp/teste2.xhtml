@@ -11,29 +11,78 @@
 <h:body>
 
 	<h:form>
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="1">
 			<h:outputLabel value="Informe o modelo" />
-			<h:inputText value="#{listaMB.nome}" />
-			<h:outputLabel value="Informe a marca" />
-			<h:inputText value="#{listaMB.marca}" />
+			<h:inputText value="#{listaMB.nome}" id="modelo"
+				requiredMessage="Campo obrigatório" required="true" />
+			<h:message for="modelo" />
+			<h:outputLabel value="Marca" />
+			<!-- 			<h:inputText value="#{listaMB.marca}" /> -->
+			<h:selectOneMenu value="#{listaMB.marca}"
+				requiredMessage="Campo obrigatório" required="true" id="marca">
+				<f:selectItem itemValue="VW" />
+				<f:selectItem itemValue="BMW" />
+				<f:selectItem itemValue="Ford" />
+				<f:selectItem itemValue="Chevrolet" />
+				<f:selectItem itemValue="Hyunday" />
+				<f:selectItem itemValue="Toyota" />
+				<f:selectItem itemValue="Outro" />
+			</h:selectOneMenu>
+			<!-- 			<h:selectManyMenu value="#{listaMB.marca}" -->
+			<!-- 				id="marca"> -->
+			<!-- 				<f:selectItem itemValue="VW" /> -->
+			<!-- 				<f:selectItem itemValue="BMW" /> -->
+			<!-- 				<f:selectItem itemValue="Ford" /> -->
+			<!-- 				<f:selectItem itemValue="Chevrolet" /> -->
+			<!-- 				<f:selectItem itemValue="São Paulo" /> -->
+			<!-- 				<f:selectItem itemValue="Hyunday" /> -->
+			<!-- 				<f:selectItem itemValue="Toyota" /> -->
+			<!-- 			</h:selectManyMenu> -->
+			<!-- 			<h:selectOneListbox value="#{listaMB.marca}" id="marca" size="4"> -->
+			<!-- 				<f:selectItem itemValue="Corinthians" /> -->
+			<!-- 				<f:selectItem itemValue="Flamengo" /> -->
+			<!-- 				<f:selectItem itemValue="Palmeiras" /> -->
+			<!-- 				<f:selectItem itemValue="Santos" /> -->
+			<!-- 				<f:selectItem itemValue="São Paulo" /> -->
+			<!-- 				<f:selectItem itemValue="Vasco" /> -->
+			<!-- 				<f:selectItem itemValue="Outro" /> -->
+			<!-- 			</h:selectOneListbox> -->
+			<h:message for="marca" />
+			<h:selectOneRadio value="#{listaMB.tipo}" id="tipo"
+				layout="pageDirection">
+				<f:selectItem itemValue="Fora de Estrada"
+					itemLabel="Fora de Estrada" />
+				<f:selectItem itemValue="Carro Urbano" itemLabel="Carro Urbano" />
+			</h:selectOneRadio>
+			<h:message for="tipo" />
+			<h:selectManyCheckbox id="assuntos"
+				value="#{listaMB.tipo}" layout="pageDirection">
+				<f:selectItem itemValue="1" itemLabel="Java" />
+				<f:selectItem itemValue="3" itemLabel="Python" />
+				<f:selectItem itemValue="4" itemLabel="Ruby" />
+				<f:selectItem itemValue="4" itemLabel="PHP" />
+				<f:selectItem itemValue="5" itemLabel="Métodos ágeis" />
+			</h:selectManyCheckbox>
+			<h:message for="assuntos" />
 		</h:panelGrid>
+
 		<h:commandButton value="Salvar" action="#{listaMB.salvarCarro}" />
-		<h3>Lista de Carros</h3>
-		<h:dataTable value="#{listaMB.carros}" var="carro" border="1"
-			cellspacing="0" cellpadding="2">
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Nome" />
-				</f:facet>
-				<h:outputText value="#{carro.nome}" />
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Marca" />
-				</f:facet>
-				<h:outputText value="#{carro.marca}" />
-			</h:column>
-		</h:dataTable>
+		<!-- 		<h3>Lista de Carros</h3> -->
+		<!-- 		<h:dataTable value="{listaMB.carros}" var="carro" border="1" -->
+		<!-- 			cellspacing="0" cellpadding="2"> -->
+		<!-- 			<h:column> -->
+		<!-- 				<f:facet name="header"> -->
+		<!-- 					<h:outputText value="Nome" /> -->
+		<!-- 				</f:facet> -->
+		<!-- 				<h:outputText value="{carro.nome}" /> -->
+		<!-- 			</h:column> -->
+		<!-- 			<h:column> -->
+		<!-- 				<f:facet name="header"> -->
+		<!-- 					<h:outputText value="Marca" /> -->
+		<!-- 				</f:facet> -->
+		<!-- 				<h:outputText value="{carro.marca}" /> -->
+		<!-- 			</h:column> -->
+		<!-- 		</h:dataTable> -->
 	</h:form>
 </h:body>
 

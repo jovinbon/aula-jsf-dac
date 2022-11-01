@@ -11,8 +11,31 @@
 <h:body>
 	<h1>Hello world!!!</h1>
 	<h:form>
-		<h:commandLink value="Ir para a página de teste" action="/teste" />
+		<h:commandLink value="Ir para a página de teste" action="/teste2" />
 	</h:form>
+
+	<h3>Lista de Carros</h3>
+	<h:dataTable value="#{listaMB.carros}" var="carro" border="1"
+		cellspacing="0" cellpadding="2">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Nome" />
+			</f:facet>
+			<h:outputText value="#{carro.nome}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Marca" />
+			</f:facet>
+			<h:outputText value="#{carro.marca}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Tipo" />
+			</f:facet>
+			<h:outputText value="#{carro.tipo}" />
+		</h:column>
+	</h:dataTable>
 </h:body>
 
 </html>

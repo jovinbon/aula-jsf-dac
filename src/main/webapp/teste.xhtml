@@ -9,12 +9,30 @@
 </h:head>
 
 <h:body>
-   <h1>Página de teste</h1>
-   <h:form>
-   <h:outputLabel value="Informe uma mensagem" />
-   <h:inputText value="#{name}"/>
-   </h:form>
-   <h:outputText value="#{name}"/>
+	<h1>Página de teste</h1>
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Dados para cadastro" />
+			</f:facet>
+			<h:outputText value="Nome:" />
+			<h:inputText size="40" />
+			<h:outputText value="E-mail:" />
+			<h:inputText size="40" />
+			<h:outputText value="Senha:" />
+			<h:inputSecret size="40" />
+			<h:outputText />
+			<h:commandButton value="Cadastrar" />
+		</h:panelGrid>
+		<!--    <h:outputLabel value="Informe uma mensagem" /> -->
+		<!--    <h:inputText value="{name}"/> -->
+		<!--    </h:form> -->
+		<!--    <h:outputText value="{name}"/> -->
+
+		<h:selectOneListbox size="5" value="#{minhaCidadeMB.cidadeNatal}">
+			<f:selectItems value="#{minhaCidadeMB.todasCidades}" />
+		</h:selectOneListbox>
+	</h:form>
 </h:body>
 
 </html>

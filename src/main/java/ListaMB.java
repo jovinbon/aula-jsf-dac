@@ -10,6 +10,7 @@ public class ListaMB {
 
 	String nome;
 	String marca;
+	String tipo;
 //	Carro carro2 = new Carro();
 //	Carro carro3 = new Carro();
 //	Carro carro4 = new Carro();
@@ -38,11 +39,20 @@ public class ListaMB {
 //		marcas.add("WV");
 	}
 
-	public void salvarCarro() {
+//	public void salvarCarro() {
+//		Carro carro = new Carro();
+//		carro.setNome(nome);
+//		carro.setMarca(marca);
+//		carros.add(carro);
+//	}
+
+	public String salvarCarro() {
 		Carro carro = new Carro();
 		carro.setNome(nome);
 		carro.setMarca(marca);
+		carro.setTipo(tipo);
 		carros.add(carro);
+		return "index?faces-redirect=true";
 	}
 
 	public List<Carro> getCarros() {
@@ -71,6 +81,14 @@ public class ListaMB {
 
 	public void setMarcas(List<String> marcas) {
 		this.marcas = marcas;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }
